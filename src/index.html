@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HN Hiring Mapped</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="../../assets/js/html5shiv.js"></script>
+        <script src="../../assets/js/respond.min.js"></script>
+        <![endif]-->
+        <style type="text/css">
+            .post {
+                background: none repeat #f7f7f7;
+                border: 1px solid #e9e9e9;
+                margin-bottom: 10px;
+                padding: 5px;
+            }
+            #jobs, #month_list {
+                margin-top: 20px;
+            }
+            .highlight {
+                color: #ff0000;
+            }
+            #map-canvas {
+                height: 550px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">HN Hiring Mapped</a>
+                </div>
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav" style="vertical-align: center">
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+            <div class="row text-right">
+                <div id="filters col-md-12">
+                    <form class="form-inline container" role="form">
+                        <div class="form-group">
+                            <label for="h1b">H-1B</label>
+                            <select class="form-control" id="h1b" id="h1b">
+                                <option value="any" selected>Any</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="intern">Intern</label>
+                            <select class="form-control" id="intern" id="intern">
+                                <option value="any" selected>Any</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="remote">Remote</label>
+                            <select class="form-control" id="remote" id="remote">
+                                <option value="any" selected>Any</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Location available:</label>
+                            <select class="form-control" id="location" id="location">
+                                <option value="any">Any</option>
+                                <option value="yes" selected>Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="freshness">Non-repeated post:</label>
+                            <select class="form-control" id="freshness" id="freshness">
+                                <option value="any" selected>Any</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <br />
+                        <div class="form-group">
+                            <label for="location_filter">Location filter</label>
+                            <input type="text" id="location_filter" class="form-control"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="text_filter">Full-text filter</label>
+                            <input type="text" id="text_filter" class="form-control" />
+                        </div>
+                    </form>
+                </div>
+                <div id="view_type" class="col-md-12">
+                </div>
+                <div id="status" class="col-md-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2" id="month_list">
+                </div>
+                <div class="col-md-10" id="view">
+                    <div id="jobs">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="js/oms.min.js"></script>
+        <script src="js/months.js"></script>
+        <script src="js/hnmapped.js"></script>
+    </body>
+</html>
