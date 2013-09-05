@@ -253,8 +253,10 @@ def main():
 
     parse_and_write(fetch_page(url), current_file, previous_month_users)
 
+    available_data = [filename.split('.')[0] for filename in os.listdir('./data') if filename[0] is not '.']
+    available_data.sort()
     available_data = json.dumps(os.listdir('./data'))
-    with open('data/months.js', 'w') as f:
+    with open('js/months.js', 'w') as f:
         f.write('var available_data = %s;'%(available_data));
     
 if __name__ == '__main__':
