@@ -185,7 +185,7 @@ def extract_text(node):
             text += child + '\n'
     return text
 
-def is_duplicate(key, store):
+def is_not_duplicate(key, store):
     if store:
         return not key in store
     return True
@@ -230,7 +230,7 @@ def parse_and_write(start_html, currrent_file, previous_month_users):
         result = dict(remote=remote, intern=intern_, h1b=h1b, 
                       url=(BASE_URL + url),
                       full_html=comment_html,
-                      user=user, freshness=is_duplicate(user, previous_month_users),
+                      user=user, freshness=is_not_duplicate(user, previous_month_users),
                       location=location,
                       lat=lat, lon=lon, country=country,
                       address=formatted_address,)
