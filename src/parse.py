@@ -175,9 +175,7 @@ def is_url(text):
 
 def extract_text(node):
     '''
-        Why extract_text and not .text_content()
-
-        This one inserts '\n' for convenience
+        Why not .text_content() - This one inserts '\n' for convenience
     '''
     text = ''
     for child in node.itertext():
@@ -192,6 +190,26 @@ def is_duplicate(key, store):
         return not key in store
     return True
 
+def location_and_geocode(comment, first_line):
+    '''
+        Guess location and geocode given a comment
+    '''
+    location, lat, lon, formatted_address, country = [None]*5
+
+    # Try guessing location on first line, then on the whole thing
+    location = guess_location(first_line)
+    if location == None:
+        location = guess_location(extract_text(comment), False)
+
+    if location:
+        (lat, lon), formatted_address, country = geocode(location)
+        if not lat or len(formatted_address) > 50:
+            # 50 is a hard limit on the length of address
+            location, lat, lon, formatted_address, country = [None]*5
+
+    return (location, lat, lon, formatted_address, country)
+
+
 def parse_and_write(start_html, currrent_file, previous_month_users):
     '''
         Parse the html, organize into objects and write to `current_file'
@@ -201,30 +219,17 @@ def parse_and_write(start_html, currrent_file, previous_month_users):
     for url, user, comment in get_comment_objects(start_html):
         if not url:
             continue
-        comment_text = extract_text(comment)
         comment_html = lxml.html.tostring(comment, encoding='utf-8')
         comment_html = comment_html.decode('utf-8')
 
-        # The first line of comment usually contains the interesting info
         first_line = shorten_comment(comment_html)
-
         remote, h1b, intern_ = guess_type_of_position(first_line)
 
-        # Try guessing location on first line, then on the whole thing
-        location, lat, lon, formatted_address, country = [None]*5
-        location = guess_location(first_line)
-        if remote == False and location == None:
-            location = guess_location(comment_text, False)
-
-        if location:
-            (lat, lon), formatted_address, country = geocode(location)
-            if not lat or len(formatted_address) > 50:
-                location, lat, lon, formatted_address, country = [None]*5
+        location, lat, lon, formatted_address, country = location_and_geocode(comment, first_line)
 
         result = dict(remote=remote, intern=intern_, h1b=h1b, 
-                      short_desc=comment_text[:256], 
-                      url=BASE_URL + url,
-                      full_text=comment_text, full_html=comment_html,
+                      url=(BASE_URL + url),
+                      full_html=comment_html,
                       user=user, freshness=is_duplicate(user, previous_month_users),
                       location=location,
                       lat=lat, lon=lon, country=country,
@@ -241,22 +246,22 @@ def main():
     date = datetime(year=int(year), month=int(month), day=1)
     previous_month = date - timedelta(days=30)
 
-    current_file = './data/%s.json' % date.strftime('%Y-%m')
-    previous_month_file = './data/%s.json' %  previous_month.strftime('%Y-%m')
+    current_file = './web/data/%s.json' % date.strftime('%Y-%m')
+    previous_month_file = './web/data/%s.json' %  previous_month.strftime('%Y-%m')
 
-    previous_month_users = None
     try:
         previous_month_data = json.load(open(previous_month_file))
         previous_month_users = [p['user'] for p in previous_month_data]
     except IOError:
-        previous_month_data = False
+        previous_month_users = False
 
     parse_and_write(fetch_page(url), current_file, previous_month_users)
 
-    available_data = [filename.split('.')[0] for filename in os.listdir('./data') if filename[0] is not '.']
+    # Dump to a file the months for which data is available, ignoring hidden files
+    available_data = [filename.split('.')[0] for filename in os.listdir('./web/data') if filename[0] is not '.']
     available_data.sort()
-    available_data = json.dumps(os.listdir('./data'))
-    with open('js/months.js', 'w') as f:
+    available_data = json.dumps(available_data)
+    with open('./web/js/months.js', 'w') as f:
         f.write('var available_data = %s;'%(available_data));
     
 if __name__ == '__main__':
