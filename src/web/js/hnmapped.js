@@ -103,7 +103,7 @@
                             '<h3>{{location}}</h3>',
                             '<h4>{{type_of_post}}</h4>',
                             '<a href="{{link}}">link</a>',
-                            '// Posted by <a href="https://news.ycombinator.com/user?id{{user}}">{{user}}</a>',
+                            '// Posted by <a href="https://news.ycombinator.com/user?id={{user}}">{{user}}</a>',
                             '<p>{{{ post_html }}}</p>'].join('\n');
 
             var html = Mustache.render(template, view);
