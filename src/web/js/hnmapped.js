@@ -30,6 +30,9 @@
             'data/' + month + '.json',
             function (data) {
                 all_posts = data;
+                $.each(all_posts, function(index, post) { 
+                    post.full_text = post.full_html.replace(/(<.*?>)+/g, ' ');
+                });
                 showData();
             }
         );
@@ -124,11 +127,10 @@
     var highlightSearchTerms = function (text, filter) {
         /*
          * Highlight the `filter' in `text'
-         * Currently also replaces text in an <a> tag, needs
-         * to be fixed
+         * Regex courtesy: http://pureform.wordpress.com/2008/01/04/matching-a-word-characters-outside-of-html-tags/
          */
         if (filter) {
-            var re = new RegExp('(' + filter + ')', 'i');
+            var re = new RegExp('(' + filter + ')(?!([^<]+)?>)', 'ig');
             if (re.exec(text)) {
                 text = text.replace(re, '<span class="highlight">$1</span>');
             }
