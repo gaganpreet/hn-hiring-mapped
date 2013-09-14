@@ -143,10 +143,9 @@ def parse_and_write(start_html, currrent_file, previous_month_users):
 
 def main():
     url = 'https://news.ycombinator.com/item?id=' + sys.argv[1]
-    year, month = sys.argv[2].split('-')
 
-    date = datetime(year=int(year), month=int(month), day=1)
-    previous_month = date - timedelta(days=30)
+    date = datetime.strptime(sys.argv[2], '%Y-%m')
+    previous_month = date - timedelta(days=1)
 
     current_file = './web/data/%s.json' % date.strftime('%Y-%m')
     previous_month_file = './web/data/%s.json' %  previous_month.strftime('%Y-%m')
