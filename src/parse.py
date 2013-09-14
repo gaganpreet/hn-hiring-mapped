@@ -12,37 +12,10 @@ from functools import lru_cache
 from lxml import etree
 from datetime import datetime, timedelta
 from pprint import pprint
+from job_opening import JobOpening
+
 
 BASE_URL = 'https://news.ycombinator.com/'
-
-class Position(object):
-    """Representation of a job opening."""
-
-    _h1b_patterns = ['h1b', 'h1-b', 'h-1b']
-
-    def __init__(self, text):
-        text = text.lower()
-        self._remote = ('remote' in text and 'no remote' not in text)
-        self._h1b = (any(pattern in text
-                         for pattern in self._h1b_patterns) and
-                     all('no ' + pattern not in text
-                         for pattern in self._h1b_patterns))
-        self._intern = ('intern' in text)
-
-    @property
-    def remote(self):
-        """Remote locations."""
-        return self._remote
-
-    @property
-    def h1b(self):
-        """H1B accepted."""
-        return self._h1b
-
-    @property
-    def intern(self):
-        """Intern position."""
-        return self._intern
 
 
 def guess_type_of_position(text):
@@ -54,8 +27,8 @@ def guess_type_of_position(text):
             * H1B (and variations)
             * Intern
     '''
-    position = Position(text)
-    return (position.remote, position.h1b, position.intern)
+    opening = JobOpening(text)
+    return (opening.remote, opening.h1b, opening.intern)
 
 def guess_location(text, aggressive=True):
     '''
