@@ -17,18 +17,6 @@ from location import Location
 BASE_URL = 'https://news.ycombinator.com/'
 
 
-def guess_type_of_position(text):
-    '''
-        Guess type of position from a piece of text
-
-        Types of position:
-            * Remote
-            * H1B (and variations)
-            * Intern
-    '''
-    opening = JobOpening(text)
-    return (opening.remote, opening.h1b, opening.intern)
-
 def shorten_comment(comment_html):
     '''
         Strip the first line from a comment, usually that is what
@@ -120,24 +108,27 @@ def parse_and_write(start_html, currrent_file, previous_month_users):
         comment_html = comment_html.decode('utf-8')
 
         first_line = shorten_comment(comment_html)
-        remote, h1b, intern_ = guess_type_of_position(first_line)
 
+        job_opening = JobOpening(first_line)
         loc = Location(first_line, extract_text(comment))
-        location = loc.location
-        lat = loc.latitude
-        lon = loc.longitude
-        formatted_address = loc.address
-        country = loc.country
 
-        result = dict(remote=remote, intern=intern_, h1b=h1b,
-                      url=(BASE_URL + url),
-                      full_html=comment_html,
-                      user=user, freshness=is_not_duplicate(user, previous_month_users),
-                      location=location,
-                      lat=lat, lon=lon, country=country,
-                      address=formatted_address,)
+        result = {
+            'remote': job_opening.remote,
+            'intern': job_opening.intern,
+            'h1b': job_opening.h1b,
+            'url': BASE_URL + url,
+            'full_html': comment_html,
+            'user': user,
+            'freshness': is_not_duplicate(user, previous_month_users),
+            'location': loc.location,
+            'lat': loc.latitude,
+            'lon': loc.longitude,
+            'country': loc.country,
+            'address': loc.address,
+        }
+
         results.append(result)
-#    pprint(results)
+
     json.dump(results, open(currrent_file, 'w'), indent=4, sort_keys=True)
 
 
