@@ -13,7 +13,37 @@ from lxml import etree
 from datetime import datetime, timedelta
 from pprint import pprint
 
-BASE_URL='https://news.ycombinator.com/'
+BASE_URL = 'https://news.ycombinator.com/'
+
+class Position(object):
+    """Representation of a job opening."""
+
+    _h1b_patterns = ['h1b', 'h1-b', 'h-1b']
+
+    def __init__(self, text):
+        text = text.lower()
+        self._remote = ('remote' in text and 'no remote' not in text)
+        self._h1b = (any(pattern in text
+                         for pattern in self._h1b_patterns) and
+                     all('no ' + pattern not in text
+                         for pattern in self._h1b_patterns))
+        self._intern = ('intern' in text)
+
+    @property
+    def remote(self):
+        """Remote locations."""
+        return self._remote
+
+    @property
+    def h1b(self):
+        """H1B accepted."""
+        return self._h1b
+
+    @property
+    def intern(self):
+        """Intern position."""
+        return self._intern
+
 
 def guess_type_of_position(text):
     '''
@@ -22,25 +52,10 @@ def guess_type_of_position(text):
         Types of position:
             * Remote
             * H1B (and variations)
-            * Intern 
+            * Intern
     '''
-    text_lower = text.lower()
-    is_remote = False
-    if 'remote' in text_lower:
-        if 'no remote' not in text_lower:
-            is_remote = True
-
-    # Check if any of h1b_patterns exist in text but isn't 
-    # prefixed by the word 'no'
-    h1b_patterns = ['h1b', 'h1-b', 'h-1b']
-    h1b = any(pattern in text_lower for pattern in h1b_patterns) and \
-          not any('no ' + pattern in text_lower for pattern in h1b_patterns) 
-
-    intern_ = False
-    if re.search(r'\Wintern\W', text_lower):
-        intern_ = True
-
-    return (is_remote, h1b, intern_)
+    position = Position(text)
+    return (position.remote, position.h1b, position.intern)
 
 def guess_location(text, aggressive=True):
     '''
@@ -51,7 +66,7 @@ def guess_location(text, aggressive=True):
             * If aggressive is true, look for patterns like City, State
     '''
     # Some commonly used locations and their oft used synonyms
-    common_locations = {'San Francisco': ['SF', 'San Francisco', 
+    common_locations = {'San Francisco': ['SF', 'San Francisco',
                                           'SoMa', 'SOMA', 'Bay Area',
                                           'SAN FRANCISCO'],
                         'Palo Alto': ['Palo Alto'],
@@ -61,7 +76,7 @@ def guess_location(text, aggressive=True):
                         'Berlin': ['Berlin'],
                         }
 
-    
+
     # Look for a common location
     for location, names in common_locations.items():
         for name in names:
