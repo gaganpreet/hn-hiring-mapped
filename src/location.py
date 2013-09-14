@@ -40,12 +40,15 @@ class Location(object):
         if not location:
             location = self.guess_location(text)
         if location:
-            self._location_data['location'] = location
             location = location.encode('UTF-8')
             results = geocode(location)
             if not results:
                 return
             lat, lon = results.coordinates
+            address = results.formatted_address
+            if not lat or len(address) > 50:
+                return
+            self._location_data['location'] = location
             self._location_data['latitude'] = lat
             self._location_data['longitude'] = lon
             self._location_data['address'] = results.formatted_address
@@ -75,7 +78,7 @@ class Location(object):
         return self._location_data.get('location')
 
     @property
-    def latitute(self):
+    def latitude(self):
         """Latitude."""
         return self._location_data.get('latitude')
 
