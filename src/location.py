@@ -1,8 +1,18 @@
 """Location module."""
 
 import re
+from functools import lru_cache
 from pygeocoder import Geocoder
 from pygeolib import GeocoderError
+
+@lru_cache(max_size=1024)
+def geocode(location):
+    """Gets geocode results for a location and caches it."""
+    try:
+        results = Geocoder.geocode(location)
+    except GeocoderError:
+        return
+    return results
 
 
 class Location(object):
@@ -21,6 +31,7 @@ class Location(object):
         'SoMa': 'San Francisco',
         'Bay Area': 'San Francisco',
         'SAN FRANCISCO': 'San Francisco',
+        'Silicon Valley': 'San Francisco',
     }
 
     def __init__(self, heading, text):
@@ -31,9 +42,8 @@ class Location(object):
         if location:
             self._location_data['location'] = location
             location = location.encode('UTF-8')
-            try:
-                results = Geocoder.geocode(location)
-            except GeocoderError:
+            results = geocode(location)
+            if not results:
                 return
             lat, lon = results.coordinates
             self._location_data['latitude'] = lat
