@@ -1,13 +1,12 @@
 /*jshint bitwise:false */
 (function() {
     "use strict";
-    // Default filters
     var default_filters = {
         "h1b": "any",
         "intern": "any",
         "remote": "any",
         "location": "yes",
-        "freshness": "any",
+        "stale": "any",
         "location_filter": "",
         "text_filter": ""
     };
@@ -162,7 +161,7 @@
 
         match &= isBoolMatch(item.remote, filters.remote);
 
-        match &= isBoolMatch(item.freshness, filters.freshness);
+        match &= isBoolMatch(!item.freshness, filters.stale);
 
         var location_available = item.address ? true : false;
         match &= isBoolMatch(location_available, filters.location);
@@ -205,11 +204,6 @@
         var new_type = view_type === "map" ? "list" : "map";
 
         $('#view_type').html(Mustache.render(template, {"type": new_type}));
-        $('#toggle_view').on('click', function () {
-            view_type = view_type === "map" ? "list" : "map";
-            showViewToggle();
-            showData();
-        });
     };
 
     var showMonthList = function () {
@@ -246,6 +240,11 @@
         $(":input").change(updateFilters);
         $(":input").on("input", null, null, updateFilters);
         showViewToggle();
+        $('#toggle_view').on('click', function () {
+            view_type = view_type === "map" ? "list" : "map";
+            showViewToggle();
+            showData();
+        });
         fetchData();
         showMonthList();
     };
