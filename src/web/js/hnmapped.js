@@ -207,6 +207,12 @@
         var new_type = view_type === "map" ? "list" : "map";
 
         $('#view_type').html(Mustache.render(template, {"type": new_type}));
+        $('#toggle_view').on('click', function () {
+            view_type = view_type === "map" ? "list" : "map";
+            showViewToggle();
+            showData();
+            e.preventDefault();
+        });
     };
 
     var showMonthList = function () {
@@ -243,11 +249,6 @@
         $(":input").change(updateFilters);
         $(":input").on("input", null, null, updateFilters);
         showViewToggle();
-        $('#toggle_view').on('click', function () {
-            view_type = view_type === "map" ? "list" : "map";
-            showViewToggle();
-            showData();
-        });
         fetchData();
         showMonthList();
     };
