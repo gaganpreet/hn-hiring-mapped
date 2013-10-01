@@ -5,7 +5,7 @@
         "h1b": "any",
         "intern": "any",
         "remote": "any",
-        "location": "yes",
+        "location": "any",
         "stale": "any",
         "location_filter": "",
         "text_filter": ""
