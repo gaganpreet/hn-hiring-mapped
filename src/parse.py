@@ -126,10 +126,13 @@ def get_comment_objects(html):
 
     for row in rows:
         if row.xpath(".//span[@class='comment']"):
-            comment = row.xpath(".//span/font")[0]
-            user = row.xpath('.//span/a[1]')[0].text_content()
-            url = row.xpath('.//span/a[2]')[0].attrib['href']
-            yield url, user, comment
+            try:
+                comment = row.xpath(".//span/font")[0]
+                user = row.xpath('.//span/a[1]')[0].text_content()
+                url = row.xpath('.//span/a[2]')[0].attrib['href']
+                yield url, user, comment
+            except:
+                continue
 
     more = html.xpath(".//a[text()='More']")
     if len(more) == 1:
