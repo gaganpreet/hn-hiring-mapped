@@ -186,13 +186,16 @@
         return match;
     };
 
+    // Store any existing timeout ID to clear if needed for type ahead search
+    var timeout = null;
     var updateFilters = function (o) {
         /* Triggered by event
          * Updates the filters array to the latest selection/input
          */
         if (filters[o.target.id] !== o.target.value) {
+            clearTimeout(timeout);
             filters[o.target.id] = o.target.value;
-            showData();
+            timeout = setTimeout(showData, 300);
         }
     };
 
