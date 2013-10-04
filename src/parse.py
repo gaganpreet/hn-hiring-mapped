@@ -76,7 +76,9 @@ def guess_location(text, aggressive=True):
     #       Two Words, AB
     # Will also pickup locations like:
     #       London, UK
-    match = re.search(r'(([A-Z][^ A-Z]{2,} ?){1,2}, [A-Z]{2})\W', text)
+    # Tries to work with Unicode locations
+    # TL;DR I tried to do NLP with a regex
+    match = re.search(r'(([A-Z][^ A-Z\W]{2,} ?){1,2}, ?[A-Z]{2})(\W|$)', text, re.UNICODE)
     if match:
         return match.group(1)
 
@@ -159,9 +161,11 @@ def geocode(location):
     '''
     location = location.encode('utf-8')
 
+    time.sleep(0.25)
     try:
         results = Geocoder.geocode(location)
-    except GeocoderError:
+    except GeocoderError as e:
+        print("Failed to geocode {0}, {1}".format(location, e))
         return ((None, None), None, None)
     lat, lon = results.coordinates
     formatted_address = results.formatted_address
@@ -211,7 +215,7 @@ def location_and_geocode(comment, first_line):
         (lat, lon), formatted_address, country = geocode(location)
         if not lat or len(formatted_address) > 50:
             # 50 is a hard limit on the length of address
-            location, lat, lon, formatted_address, country = [None]*5
+            lat, lon, formatted_address, country = [None]*4
 
     return (location, lat, lon, formatted_address, country)
 
