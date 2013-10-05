@@ -8,10 +8,13 @@ def is_latest_present(latest):
     Check input file to see if a HN link is already present.
     Returns True if present, False if not.
     """
-    with open('input', 'r') as f:
-        for inputline in f.readlines():
-            if latest == inputline:
-                return True
+    try:
+        with open('input', 'r') as f:
+            for inputline in f.readlines():
+                if latest == inputline:
+                    return True
+    except IOError:
+        print("Unable to check input file!")
     return False
 
 
@@ -44,9 +47,11 @@ def write_latest(latest, filename='input'):
     """
     Append latest HN "Who is hiring?" itemid and date to input file.
     """
-    with open('input', 'a') as f:
-        f.write(latest)
-
+    try:
+        with open('input', 'a') as f:
+            f.write(latest)
+    except IOError:
+        print("Unable to open input file!")
 
 def main():
     """
