@@ -53,6 +53,7 @@ def write_latest(latest, filename='input'):
     except IOError:
         print("Unable to open input file!")
 
+
 def main():
     """
     Get latest HN "Who is hiring?" link, check if already in input file.
