@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import lxml.etree
 from time import strptime
 from parse import fetch_page, BASE_URL
