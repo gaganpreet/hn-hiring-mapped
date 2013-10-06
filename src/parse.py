@@ -15,12 +15,12 @@ BASE_URL = 'https://news.ycombinator.com'
 
 def guess_type_of_position(text):
     '''
-        Guess type of position from a piece of text
+    Guess type of position from a piece of text
 
-        Types of position:
-            * Remote
-            * H1B (and variations)
-            * Intern
+    Types of position:
+        * Remote
+        * H1B (and variations)
+        * Intern
     '''
     filters = {'h1b': r'(\W|^)(?<!no )(h1b|h-1b|h1-b)(\W|$)',
                'remote': r'(\W|^)(?<!no )remote(\W|$)',
@@ -40,11 +40,10 @@ def guess_type_of_position(text):
 
 def guess_location(text, aggressive=True):
     '''
-        Parse the location from a piece of text using some
-        heuristics:
-            * Match some common locations and their variations
-            * Look for patterns like City Name, Two letter state/country code
-            * If aggressive is true, look for patterns like City, State
+    Parse the location from a piece of text using some heuristics:
+        * Match some common locations and their variations
+        * Look for patterns like City Name, Two letter state/country code
+        * If aggressive is true, look for patterns like City, State
     '''
     # Some commonly used locations and their oft used synonyms
     common_locations = json.load(open('common_locations.json'))
@@ -81,10 +80,10 @@ def guess_location(text, aggressive=True):
 
 def shorten_comment(comment_html):
     '''
-        Strip the first line from a comment, usually that is what
-        stores the information about type of position and location
+    Strip the first line from a comment
+    Usually that is what stores the information about type of position and location
 
-        Otherwise just reutrn the whole thing
+    Otherwise just return the whole thing
     '''
     # First line either ends at a \n or starts at a new paragraph
     # Most of the comments (> 90%) should be parsed with this
@@ -102,7 +101,7 @@ def shorten_comment(comment_html):
 
 def get_comment_objects(html):
     '''
-        Parse the page with lxml and get the top level comments
+    Parse the page with lxml and get the top level comments
     '''
     html = lxml.html.fromstring(html)
 
@@ -130,7 +129,7 @@ def get_comment_objects(html):
 
 def fetch_page(url):
     '''
-        GET a url and return the response if status code is 200
+    GET a url and return the response if status code is 200
     '''
     print('Fetching ' + url)
     response = requests.get(url)
@@ -141,8 +140,8 @@ def fetch_page(url):
 @lru_cache(maxsize=200, typed=False)
 def geocode(location):
     '''
-        Geocode a location
-        Results are cached
+    Geocode a location
+    Results are cached
     '''
     location = location.encode('utf-8')
 
@@ -164,13 +163,13 @@ def geocode(location):
 
 def is_url(text):
     '''
-        Is the piece of text a URL
+    Is the piece of text a URL
     '''
     return re.match('^https?://[^ ]*$', text)
 
 def extract_text(node):
     '''
-        Why not .text_content() - This one inserts '\n' for convenience
+    Why not .text_content() - This one inserts '\n' for convenience
     '''
     text = ''
     for child in node.itertext():
@@ -187,7 +186,7 @@ def is_not_duplicate(key, store):
 
 def location_and_geocode(comment, first_line):
     '''
-        Guess location and geocode given a comment
+    Guess location and geocode given a comment
     '''
     location, lat, lon, formatted_address, country = [None]*5
 
@@ -207,8 +206,8 @@ def location_and_geocode(comment, first_line):
 
 def parse_and_write(start_html, currrent_file, previous_month_users):
     '''
-        Parse the html, organize into objects and write to `current_file'
-        as json
+    Parse the html, organize into objects and write to `current_file'
+    as json
     '''
     results = []
     for url, user, comment in get_comment_objects(start_html):
