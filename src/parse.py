@@ -20,8 +20,11 @@ def guess_type_of_position(text):
     Types of position:
         * Remote
         * H1B (and variations)
-        * Intern
+        * Intern (and variations)
     '''
+    # Current version of re module doesn't support variable length look behinds
+    # but the new regex module does, just in case someone wants to improve
+    # this regex
     filters = {'h1b': r'(\W|^)(?<!no )(h1b|h-1b|h1-b)(\W|$)',
                'remote': r'(\W|^)(?<!no )remote(\W|$)',
                'intern': r'(\W|^)(?<!no )intern(s|ship)?(\W|$)'
@@ -83,7 +86,7 @@ def shorten_comment(comment_html):
     Strip the first line from a comment
     Usually that is what stores the information about type of position and location
 
-    Otherwise just return the whole thing
+    Otherwise just return the whole thing (if it can't be parsed)
     '''
     # First line either ends at a \n or starts at a new paragraph
     # Most of the comments (> 90%) should be parsed with this
@@ -103,24 +106,24 @@ def get_comment_objects(html):
     '''
     Parse the page with lxml and get the top level comments
     '''
-    html = lxml.html.fromstring(html)
+    tree = lxml.html.fromstring(html)
 
     # This is a complicated xpath because HN's html is terrible
     # Another reason is that we need only the top level comments,
     # and ignore the children
-    rows = html.xpath("//img[@width=0]/../..")
+    rows = tree.xpath("//img[@width=0]/../..")
 
     for row in rows:
         if row.xpath(".//span[@class='comment']"):
             try:
                 comment = row.xpath(".//span/font")[0]
                 user = row.xpath('.//span/a[1]')[0].text_content()
-                url = '/' + row.xpath('.//span/a[2]')[0].attrib['href']
-                yield url, user, comment
+                url_path = '/' + row.xpath('.//span/a[2]')[0].attrib['href']
+                yield url_path, user, comment
             except:
                 continue
 
-    more = html.xpath(".//a[text()='More']")
+    more = tree.xpath(".//a[text()='More']")
     if len(more) == 1:
         time.sleep(30)
         page = fetch_page(BASE_URL + more[0].attrib['href'])
@@ -129,7 +132,7 @@ def get_comment_objects(html):
 
 def fetch_page(url):
     '''
-    GET a url and return the response if status code is 200
+    GET a url and return the response text if status code is 200
     '''
     print('Fetching ' + url)
     response = requests.get(url)
@@ -210,8 +213,8 @@ def parse_and_write(start_html, currrent_file, previous_month_users):
     as json
     '''
     results = []
-    for url, user, comment in get_comment_objects(start_html):
-        if not url:
+    for url_path, user, comment in get_comment_objects(start_html):
+        if not url_path:
             continue
         comment_html = lxml.html.tostring(comment, encoding='utf-8')
         comment_html = comment_html.decode('utf-8')
@@ -224,7 +227,7 @@ def parse_and_write(start_html, currrent_file, previous_month_users):
         result = dict(remote=remote,
                       intern=intern_,
                       h1b=h1b,
-                      url=(BASE_URL + url),
+                      url=(BASE_URL + url_path),
                       full_html=comment_html,
                       user=user,
                       freshness=is_not_duplicate(user, previous_month_users),
