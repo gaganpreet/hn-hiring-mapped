@@ -49,26 +49,13 @@ def guess_location(text, aggressive=True):
             * If aggressive is true, look for patterns like City, State
     '''
     # Some commonly used locations and their oft used synonyms
-    common_locations = {'San Francisco': ['SF',
-                                          'San Francisco',
-                                          'SoMa',
-                                          'SOMA',
-                                          'Bay Area',
-                                          'SAN FRANCISCO'],
-                        'New York': ['NYC',
-                                     'NY',
-                                     'New York'],
-                        'London': ['London'],
-                        'Berlin': ['Berlin'],
-                        'Palo Alto': ['Palo Alto'],
-                        'Mountain View': ['Mountain View'],
-                        }
+    common_locations = json.load(open('common_locations.json'))
 
     # Look for a common location
-    for location, names in common_locations.items():
-        for name in names:
-            if name in text:
-                return location
+    for location in common_locations:
+        for synonym in location['synonyms']:
+            if synonym in text:
+                return location['name']
 
     # Match for US locations like:
     #       Cambridge, MA

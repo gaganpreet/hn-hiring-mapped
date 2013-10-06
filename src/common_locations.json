@@ -1,0 +1,45 @@
+[
+    {
+        "name": "San Francisco", 
+        "synonyms": [
+            "SF", 
+            "San Francisco", 
+            "SoMa", 
+            "SOMA", 
+            "Bay Area", 
+            "SAN FRANCISCO"
+        ]
+    }, 
+    {
+        "name": "New York", 
+        "synonyms": [
+            "NYC", 
+            "NY", 
+            "New York"
+        ]
+    }, 
+    {
+        "name": "London", 
+        "synonyms": [
+            "London"
+        ]
+    }, 
+    {
+        "name": "Berlin", 
+        "synonyms": [
+            "Berlin"
+        ]
+    }, 
+    {
+        "name": "Palo Alto", 
+        "synonyms": [
+            "Palo Alto"
+        ]
+    }, 
+    {
+        "name": "Mountain View", 
+        "synonyms": [
+            "Mountain View"
+        ]
+    }
+]
