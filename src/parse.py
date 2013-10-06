@@ -11,7 +11,7 @@ from pygeolib import GeocoderError
 from functools import lru_cache
 from datetime import datetime, timedelta
 
-BASE_URL = 'https://news.ycombinator.com/'
+BASE_URL = 'https://news.ycombinator.com'
 
 def guess_type_of_position(text):
     '''
@@ -22,23 +22,21 @@ def guess_type_of_position(text):
             * H1B (and variations)
             * Intern
     '''
+    filters = {'h1b': r'(\W|^)(?<!no )(h1b|h-1b|h1-b)(\W|$)',
+               'remote': r'(\W|^)(?<!no )remote(\W|$)',
+               'intern': r'(\W|^)(?<!no )intern(s|ship)?(\W|$)'
+               }
+
     text_lower = text.lower()
-    is_remote = False
-    if 'remote' in text_lower:
-        if 'no remote' not in text_lower:
-            is_remote = True
-
-    # Check if any of h1b_patterns exist in text but isn't
-    # prefixed by the word 'no'
-    h1b_patterns = ['h1b', 'h1-b', 'h-1b']
-    h1b = (any(pattern in text_lower for pattern in h1b_patterns) and
-            not any('no ' + pattern in text_lower for pattern in h1b_patterns))
-
-    intern_ = False
-    if re.search(r'\Wintern\W', text_lower):
+    h1b, remote, intern_ = [False]*3
+    if re.search(filters['h1b'], text_lower):
+        h1b = True
+    if re.search(filters['remote'], text_lower):
+        remote = True
+    if re.search(filters['intern'], text_lower):
         intern_ = True
 
-    return (is_remote, h1b, intern_)
+    return remote, h1b, intern_
 
 def guess_location(text, aggressive=True):
     '''
@@ -118,7 +116,7 @@ def get_comment_objects(html):
             try:
                 comment = row.xpath(".//span/font")[0]
                 user = row.xpath('.//span/a[1]')[0].text_content()
-                url = row.xpath('.//span/a[2]')[0].attrib['href']
+                url = '/' + row.xpath('.//span/a[2]')[0].attrib['href']
                 yield url, user, comment
             except:
                 continue
@@ -126,7 +124,7 @@ def get_comment_objects(html):
     more = html.xpath(".//a[text()='More']")
     if len(more) == 1:
         time.sleep(30)
-        page = fetch_page('http://news.ycombinator.com' + more[0].attrib['href'])
+        page = fetch_page(BASE_URL + more[0].attrib['href'])
         for comment in get_comment_objects(page):
             yield comment
 
@@ -220,7 +218,7 @@ def parse_and_write(start_html, currrent_file, previous_month_users):
         comment_html = comment_html.decode('utf-8')
 
         first_line = shorten_comment(comment_html)
-        remote, h1b, intern_ = guess_type_of_position(first_line)
+        remote, h1b, intern_ = guess_type_of_position(extract_text(comment))
 
         location, lat, lon, formatted_address, country = location_and_geocode(comment, first_line)
 
@@ -241,7 +239,7 @@ def parse_and_write(start_html, currrent_file, previous_month_users):
 
 
 def main():
-    url = 'https://news.ycombinator.com/item?id=' + sys.argv[1]
+    url = BASE_URL + '/item?id=' + sys.argv[1]
 
     date = datetime.strptime(sys.argv[2], '%Y-%m')
     previous_month = date - timedelta(days=1)

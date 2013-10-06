@@ -24,7 +24,7 @@ def get_latest():
     Find latest "Who is hiring?" link from HN.
     Return a string formatted for input file "itemid year-month\n"
     """
-    response = fetch_page(BASE_URL + 'submitted?id=whoishiring')
+    response = fetch_page(BASE_URL + '/submitted?id=whoishiring')
     parser = lxml.etree.HTMLParser()
     tree = lxml.etree.fromstring(response, parser)
     # get "Who is hiring?" links from main page
