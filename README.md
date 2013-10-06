@@ -10,9 +10,9 @@ Demo
 ----
 [Here](http://gaganpreet.github.io/hn-hiring-mapped/).
 
-I'm not sure if there's a better way to organize the gh-pages branch so it's convenient to manage and use via Github Pages at the same time.
+The main branch of this repository is gh-pages. Unfortunately, Github doesn't allow setting a subdirectory as a Github pages source - but if you know some way to get pretty URLs and keep the project layout clean, let me know.
 
 
 Generating latest json
 ----------------------
-Edit src/input, add the post id and yyyy-mm value, and run "run.sh"
+Run "run.sh", which will get the latest post ID from the whoishiring account, and append it to 'input' and run the parser
