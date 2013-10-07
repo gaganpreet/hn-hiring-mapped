@@ -12,6 +12,16 @@
         <script src="../../assets/js/respond.min.js"></script>
         <![endif]-->
         <style type="text/css">
+            html, body {
+                height: 100%;
+            }
+            #wrap {
+                min-height: 100%;
+                height: auto !important;
+                height: 100%;
+                margin: 0 auto -80px;
+                padding: 0 0 80px;
+            }
             .post {
                 background: none repeat #f7f7f7;
                 border: 1px solid #e9e9e9;
@@ -29,7 +39,7 @@
             }
 
             .footer {
-                height: 60px;
+                height: 80px;
                 background-color: #f5f5f5;
             }
             .credit {
@@ -39,102 +49,105 @@
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="navbar navbar-default">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">HN Hiring Mapped</a>
+        <div id="wrap">
+            <div class="container">
+                <div class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">HN Hiring Mapped</a>
+                    </div>
+                    <div class="navbar-collapse collapse navbar-right">
+                        <ul class="nav navbar-nav" style="vertical-align: center">
+                        </ul>
+                    </div><!--/.nav-collapse -->
                 </div>
-                <div class="navbar-collapse collapse navbar-right">
-                    <ul class="nav navbar-nav" style="vertical-align: center">
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-            <div class="row text-right">
-                <div id="filters col-md-12">
-                    <form class="form-inline container" role="form">
-                        <div class="form-group">
-                            <label for="h1b">H-1B</label>
-                            <select class="form-control" id="h1b" name="h1b">
-                                <option value="any" selected>Any</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
+                <div class="row text-right">
+                    <div id="filters col-md-12">
+                        <form class="form-inline container" role="form">
+                            <div class="form-group">
+                                <label for="h1b">H-1B</label>
+                                <select class="form-control" id="h1b" name="h1b">
+                                    <option value="any" selected>Any</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="intern">Intern</label>
-                            <select class="form-control" id="intern" name="intern">
-                                <option value="any" selected>Any</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="intern">Intern</label>
+                                <select class="form-control" id="intern" name="intern">
+                                    <option value="any" selected>Any</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="remote">Remote</label>
-                            <select class="form-control" id="remote" name="remote">
-                                <option value="any" selected>Any</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="remote">Remote</label>
+                                <select class="form-control" id="remote" name="remote">
+                                    <option value="any" selected>Any</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="location">Location available:</label>
-                            <select class="form-control" id="location" name="location">
-                                <option value="any" selected>Any</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="location">Location available:</label>
+                                <select class="form-control" id="location" name="location">
+                                    <option value="any" selected>Any</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="stale">Posted last month:</label>
-                            <select class="form-control" id="stale" name="stale">
-                                <option value="any" selected>Any</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="stale">Posted last month:</label>
+                                <select class="form-control" id="stale" name="stale">
+                                    <option value="any" selected>Any</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
 
-                        <br />
-                        <div class="form-group">
-                            <label for="location_filter">Location filter</label>
-                            <input type="text" id="location_filter" class="form-control" placeholder="eg: USA, Germany|Netherlands, New York" />
-                        </div>
+                            <br />
+                            <div class="form-group">
+                                <label for="location_filter">Location filter</label>
+                                <input type="text" id="location_filter" class="form-control" placeholder="eg: USA, Germany|Netherlands, New York" />
+                            </div>
 
-                        <div class="form-group">
-                            <label for="text_filter">Full-text filter</label>
-                            <input type="text" id="text_filter" class="form-control" />
-                        </div>
-                    </form>
-                </div>
-                <div id="view_type" class="col-md-12">
-                </div>
-                <div id="status" class="col-md-12">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2" id="month_list">
-                </div>
-                <div class="col-md-10" id="view">
-                    <div id="jobs">
+                            <div class="form-group">
+                                <label for="text_filter">Full-text filter</label>
+                                <input type="text" id="text_filter" class="form-control" />
+                            </div>
+                        </form>
+                    </div>
+                    <div id="view_type" class="col-md-12">
+                    </div>
+                    <div id="status" class="col-md-12">
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-2" id="month_list">
+                    </div>
+                    <div class="col-md-10" id="view">
+                        <div id="jobs">
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
             </div>
-
-            <br />
-
         </div>
 
         <div class="footer">
             <div class="container text-center">
-                <p class="credit">Built by <a href="http://gaganpreet.in">Gaganpreet</a>. Source available <a href="https://github.com/gaganpreet/hn-hiring-mapped/">here</a>. Looking for a hacker? Contact <a href="mailto:me@gaganpreet.in">me</a>.</p>
+                <p class="credit">Built by <a href="http://gaganpreet.in">Gaganpreet</a>. Source available <a href="https://github.com/gaganpreet/hn-hiring-mapped/">here</a>.<br />
+                Also check out <a href="http://curatedhnhiring.com/">Curated HN Hiring</a> - the same thread curated by Michael Chen</p>
             </div>
         </div>
 
