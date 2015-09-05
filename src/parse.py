@@ -103,7 +103,7 @@ def shorten_comment(comment_html):
     return line
 
 def get_comment_objects(items):
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         for response in executor.map(fetch_item, items):
             if not response:
                 continue
