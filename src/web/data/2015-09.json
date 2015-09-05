@@ -336,20 +336,6 @@
         "user": "muyfine"
     },
     {
-        "address": "New York, NY, USA",
-        "country": "US",
-        "freshness": true,
-        "full_html": "New York City - Moat<p>Moat is a growing measurement &amp; analytics startup with products in two core areas:<p>1) Analytics<p>Moat Analytics analyzes content and advertisements for many of the most trafficked websites on the Internet. We gather ~30+ terabytes of data per day and provide customers metrics like ad viewability, attention and user engagement. This product has helped change the way people spend money on ads.<p>2) Search<p>We index the Internet for online ads. This allows us to give advertisers, publishers and adtech companies an overview of the entire online ad ecosystem. This is hugely valuable information - our customers can see their competitors&#x27; ad campaigns, find prospects by seeing the clients of similar sites or see trends in the industry before anyone else. We have a free product, moat.com and a premium product, Moat Pro.<p>Both technical and non-technical openings can be found at<p>jobs.moat.com\nPress.moat.com<p>Email - ryan@moat.com",
-        "h1b": false,
-        "intern": false,
-        "lat": 40.7127837,
-        "location": "New York",
-        "lon": -74.0059413,
-        "remote": false,
-        "url": "https://news.ycombinator.com/item?id=10170542",
-        "user": "ryanrende"
-    },
-    {
         "address": "Toronto, ON, Canada",
         "country": "CA",
         "freshness": true,
@@ -362,6 +348,20 @@
         "remote": true,
         "url": "https://news.ycombinator.com/item?id=10156565",
         "user": "moises_silva"
+    },
+    {
+        "address": "New York, NY, USA",
+        "country": "US",
+        "freshness": true,
+        "full_html": "New York City - Moat<p>Moat is a growing measurement &amp; analytics startup with products in two core areas:<p>1) Analytics<p>Moat Analytics analyzes content and advertisements for many of the most trafficked websites on the Internet. We gather ~30+ terabytes of data per day and provide customers metrics like ad viewability, attention and user engagement. This product has helped change the way people spend money on ads.<p>2) Search<p>We index the Internet for online ads. This allows us to give advertisers, publishers and adtech companies an overview of the entire online ad ecosystem. This is hugely valuable information - our customers can see their competitors&#x27; ad campaigns, find prospects by seeing the clients of similar sites or see trends in the industry before anyone else. We have a free product, moat.com and a premium product, Moat Pro.<p>Both technical and non-technical openings can be found at<p>jobs.moat.com\nPress.moat.com<p>Email - ryan@moat.com",
+        "h1b": false,
+        "intern": false,
+        "lat": 40.7127837,
+        "location": "New York",
+        "lon": -74.0059413,
+        "remote": false,
+        "url": "https://news.ycombinator.com/item?id=10170542",
+        "user": "ryanrende"
     },
     {
         "address": null,
@@ -602,20 +602,6 @@
         "user": "mopatches"
     },
     {
-        "address": "Melbourne VIC, Australia",
-        "country": "AU",
-        "freshness": true,
-        "full_html": "Ci | Melbourne, Australia | Full-time<p>Embedded developer &#x2F; interface designer. We design + create integrated systems for modern, connected environments. Our projects range from building intelligence to immersive telepresence to large format display solutions. Here&#x27;s some drone footage of a real-time rendered 50,000px wide, 0.5km long screen we recently put into the MCG: <a href=\"https:&#x2F;&#x2F;ciasia.box.com&#x2F;project-ribbon-video\" rel=\"nofollow\">https:&#x2F;&#x2F;ciasia.box.com&#x2F;project-ribbon-video</a>. More projects over at <a href=\"http:&#x2F;&#x2F;ciasia.com.au&#x2F;whatwedo\" rel=\"nofollow\">http:&#x2F;&#x2F;ciasia.com.au&#x2F;whatwedo</a>.<p>For the full description and to apply see <a href=\"http:&#x2F;&#x2F;www.seek.com.au&#x2F;job&#x2F;29283437\" rel=\"nofollow\">http:&#x2F;&#x2F;www.seek.com.au&#x2F;job&#x2F;29283437</a>.",
-        "h1b": false,
-        "intern": false,
-        "lat": -37.814107,
-        "location": "Melbourne, Australia",
-        "lon": 144.96328,
-        "remote": false,
-        "url": "https://news.ycombinator.com/item?id=10168716",
-        "user": "kimburgess"
-    },
-    {
         "address": "Bogot\u00e1, Bogota, Colombia",
         "country": "CO",
         "freshness": true,
@@ -628,6 +614,20 @@
         "remote": false,
         "url": "https://news.ycombinator.com/item?id=10157237",
         "user": "gkrimer"
+    },
+    {
+        "address": "Melbourne VIC, Australia",
+        "country": "AU",
+        "freshness": true,
+        "full_html": "Ci | Melbourne, Australia | Full-time<p>Embedded developer &#x2F; interface designer. We design + create integrated systems for modern, connected environments. Our projects range from building intelligence to immersive telepresence to large format display solutions. Here&#x27;s some drone footage of a real-time rendered 50,000px wide, 0.5km long screen we recently put into the MCG: <a href=\"https:&#x2F;&#x2F;ciasia.box.com&#x2F;project-ribbon-video\" rel=\"nofollow\">https:&#x2F;&#x2F;ciasia.box.com&#x2F;project-ribbon-video</a>. More projects over at <a href=\"http:&#x2F;&#x2F;ciasia.com.au&#x2F;whatwedo\" rel=\"nofollow\">http:&#x2F;&#x2F;ciasia.com.au&#x2F;whatwedo</a>.<p>For the full description and to apply see <a href=\"http:&#x2F;&#x2F;www.seek.com.au&#x2F;job&#x2F;29283437\" rel=\"nofollow\">http:&#x2F;&#x2F;www.seek.com.au&#x2F;job&#x2F;29283437</a>.",
+        "h1b": false,
+        "intern": false,
+        "lat": -37.814107,
+        "location": "Melbourne, Australia",
+        "lon": 144.96328,
+        "remote": false,
+        "url": "https://news.ycombinator.com/item?id=10168716",
+        "user": "kimburgess"
     },
     {
         "address": "San Francisco, CA, USA",
@@ -798,20 +798,6 @@
         "user": "bensummers"
     },
     {
-        "address": "San Francisco, CA, USA",
-        "country": "US",
-        "freshness": true,
-        "full_html": "Clariture - <a href=\"http:&#x2F;&#x2F;clariturehealth.com\" rel=\"nofollow\">http:&#x2F;&#x2F;clariturehealth.com</a> - San Francisco, CA - Full Time - ONSITE<p>We\u2019re hiring back-end and front-end engineers to help us revolutionize Healthcare Marketing. The healthcare industry is way behind in adopting many innovations in digital marketing. As a result, there\u2019s a massive amount of money being wasted on ineffective marketing channels. Come help us build the tools to connect healthcare providers with the right online audiences!<p>We\u2019re hiring:<p>* Back-end engineers - <a href=\"http:&#x2F;&#x2F;clariturehealth.theresumator.com&#x2F;apply&#x2F;SvGR9k&#x2F;Web-Engineer-Backend\" rel=\"nofollow\">http:&#x2F;&#x2F;clariturehealth.theresumator.com&#x2F;apply&#x2F;SvGR9k&#x2F;Web-Eng...</a><p>* Front-end engineers - <a href=\"http:&#x2F;&#x2F;clariturehealth.theresumator.com&#x2F;apply&#x2F;5d0uES&#x2F;Web-Engineer-Frontend\" rel=\"nofollow\">http:&#x2F;&#x2F;clariturehealth.theresumator.com&#x2F;apply&#x2F;5d0uES&#x2F;Web-Eng...</a><p>Our stack:<p>Back-end: Python, Django, Celery, PostgreSQL<p>Front-end: Foundation, d3.js, AngularJS<p>Infra: AWS, Docker",
-        "h1b": false,
-        "intern": false,
-        "lat": 37.7749295,
-        "location": "San Francisco",
-        "lon": -122.4194155,
-        "remote": false,
-        "url": "https://news.ycombinator.com/item?id=10166757",
-        "user": "bleftson"
-    },
-    {
         "address": "Sydney NSW, Australia",
         "country": "AU",
         "freshness": true,
@@ -824,6 +810,20 @@
         "remote": false,
         "url": "https://news.ycombinator.com/item?id=10156289",
         "user": "madeofpalk"
+    },
+    {
+        "address": "San Francisco, CA, USA",
+        "country": "US",
+        "freshness": true,
+        "full_html": "Clariture - <a href=\"http:&#x2F;&#x2F;clariturehealth.com\" rel=\"nofollow\">http:&#x2F;&#x2F;clariturehealth.com</a> - San Francisco, CA - Full Time - ONSITE<p>We\u2019re hiring back-end and front-end engineers to help us revolutionize Healthcare Marketing. The healthcare industry is way behind in adopting many innovations in digital marketing. As a result, there\u2019s a massive amount of money being wasted on ineffective marketing channels. Come help us build the tools to connect healthcare providers with the right online audiences!<p>We\u2019re hiring:<p>* Back-end engineers - <a href=\"http:&#x2F;&#x2F;clariturehealth.theresumator.com&#x2F;apply&#x2F;SvGR9k&#x2F;Web-Engineer-Backend\" rel=\"nofollow\">http:&#x2F;&#x2F;clariturehealth.theresumator.com&#x2F;apply&#x2F;SvGR9k&#x2F;Web-Eng...</a><p>* Front-end engineers - <a href=\"http:&#x2F;&#x2F;clariturehealth.theresumator.com&#x2F;apply&#x2F;5d0uES&#x2F;Web-Engineer-Frontend\" rel=\"nofollow\">http:&#x2F;&#x2F;clariturehealth.theresumator.com&#x2F;apply&#x2F;5d0uES&#x2F;Web-Eng...</a><p>Our stack:<p>Back-end: Python, Django, Celery, PostgreSQL<p>Front-end: Foundation, d3.js, AngularJS<p>Infra: AWS, Docker",
+        "h1b": false,
+        "intern": false,
+        "lat": 37.7749295,
+        "location": "San Francisco",
+        "lon": -122.4194155,
+        "remote": false,
+        "url": "https://news.ycombinator.com/item?id=10166757",
+        "user": "bleftson"
     },
     {
         "address": null,
@@ -3024,20 +3024,6 @@
         "user": "aer5078"
     },
     {
-        "address": "Toronto, ON, Canada",
-        "country": "CA",
-        "freshness": true,
-        "full_html": "Vantage Analytics - Toronto, Canada - Onsite<p>Growth Marketing Lead<p>This is a vital role, you\u2019ll be responsible for growing our customer base of paying customers and tightening up our conversion funnels.<p>This position will have complete control over managing and driving customer growth so having a desire to lead and manage a comprehensive growth strategy, as well as the skills to help execute that strategy, is critical.<p>You\u2019ll need to take on the traditional marketing world, SEO and paid channels (AdWords, Facebook, 3rd party networks, etc), content marketing, and the new techniques of growth-hacking, all with a heavy emphasis on data and analysis to run experiments and validate hypotheses.<p>The successful candidate must be passionate about using data to make decisions and taking the company vision to new heights.<p>We\u2019re looking for someone who embraces failure in testing, learns from it and makes their decisions better the next time around.<p>As a startup, no job is too big or too small for anyone at the company, so we\u2019re looking for someone who thrives on being challenged, with a do-what-it-takes attitude, and a high level of intellectual curiosity. They are energized by finding new and more efficient ways to do anything (processes and systems are just what we need to tighten up the way we work).<p>To apply email marketing@vantageanalytics.com or go to <a href=\"http:&#x2F;&#x2F;vantageanalytics.com&#x2F;careers&#x2F;#growth-marketing-lead\" rel=\"nofollow\">http:&#x2F;&#x2F;vantageanalytics.com&#x2F;careers&#x2F;#growth-marketing-lead</a><p>Also hiring in the sales and customer support side, also email marketing@vantageanalytics.com",
-        "h1b": false,
-        "intern": false,
-        "lat": 43.653226,
-        "location": "Toronto, Canada",
-        "lon": -79.3831843,
-        "remote": false,
-        "url": "https://news.ycombinator.com/item?id=10156330",
-        "user": "marketingadvice"
-    },
-    {
         "address": "San Francisco, CA, USA",
         "country": "US",
         "freshness": true,
@@ -3050,6 +3036,20 @@
         "remote": false,
         "url": "https://news.ycombinator.com/item?id=10154935",
         "user": "dotBen"
+    },
+    {
+        "address": "Toronto, ON, Canada",
+        "country": "CA",
+        "freshness": true,
+        "full_html": "Vantage Analytics - Toronto, Canada - Onsite<p>Growth Marketing Lead<p>This is a vital role, you\u2019ll be responsible for growing our customer base of paying customers and tightening up our conversion funnels.<p>This position will have complete control over managing and driving customer growth so having a desire to lead and manage a comprehensive growth strategy, as well as the skills to help execute that strategy, is critical.<p>You\u2019ll need to take on the traditional marketing world, SEO and paid channels (AdWords, Facebook, 3rd party networks, etc), content marketing, and the new techniques of growth-hacking, all with a heavy emphasis on data and analysis to run experiments and validate hypotheses.<p>The successful candidate must be passionate about using data to make decisions and taking the company vision to new heights.<p>We\u2019re looking for someone who embraces failure in testing, learns from it and makes their decisions better the next time around.<p>As a startup, no job is too big or too small for anyone at the company, so we\u2019re looking for someone who thrives on being challenged, with a do-what-it-takes attitude, and a high level of intellectual curiosity. They are energized by finding new and more efficient ways to do anything (processes and systems are just what we need to tighten up the way we work).<p>To apply email marketing@vantageanalytics.com or go to <a href=\"http:&#x2F;&#x2F;vantageanalytics.com&#x2F;careers&#x2F;#growth-marketing-lead\" rel=\"nofollow\">http:&#x2F;&#x2F;vantageanalytics.com&#x2F;careers&#x2F;#growth-marketing-lead</a><p>Also hiring in the sales and customer support side, also email marketing@vantageanalytics.com",
+        "h1b": false,
+        "intern": false,
+        "lat": 43.653226,
+        "location": "Toronto, Canada",
+        "lon": -79.3831843,
+        "remote": false,
+        "url": "https://news.ycombinator.com/item?id=10156330",
+        "user": "marketingadvice"
     },
     {
         "address": "Chilliwack, BC, Canada",
@@ -3472,20 +3472,6 @@
         "user": "samcheng"
     },
     {
-        "address": "Brisbane QLD, Australia",
-        "country": "AU",
-        "freshness": true,
-        "full_html": "Insight Informatics - <a href=\"http:&#x2F;&#x2F;libero.com.au&#x2F;\" rel=\"nofollow\">http:&#x2F;&#x2F;libero.com.au&#x2F;</a> - Brisbane, Australia or REMOTE (within Australia)<p>We&#x27;re a team of 12 responsible for delivering a world-class Library Management Platform to Public, Corporate and University Libraries around Australia, Germany, Italy, Switzerland and the United Kingdom. Our mission is to provide the best set of tools that empower libraries to build communities, simplify their day to day running and provide exactly what their members need.<p>Front-End Developer: We&#x27;re entirely web-based and have been prototyping our latest stuff with React.js - our customers love what we&#x27;ve come up with so far. We&#x27;re after experienced people passionate about user experience to invent new ways to interact with your library, as well as build upon what we have at the moment.<p>Shoot us an email at seb@libero.com.au to chat if you&#x27;re interested, or even if you were&#x2F;still are that kid that likes hanging out at the library.",
-        "h1b": false,
-        "intern": false,
-        "lat": -27.4710107,
-        "location": "Brisbane, Australia",
-        "lon": 153.0234489,
-        "remote": true,
-        "url": "https://news.ycombinator.com/item?id=10157331",
-        "user": "Novex"
-    },
-    {
         "address": "Washington, DC, USA",
         "country": "US",
         "freshness": true,
@@ -3498,6 +3484,20 @@
         "remote": false,
         "url": "https://news.ycombinator.com/item?id=10155135",
         "user": "fheisler"
+    },
+    {
+        "address": "Brisbane QLD, Australia",
+        "country": "AU",
+        "freshness": true,
+        "full_html": "Insight Informatics - <a href=\"http:&#x2F;&#x2F;libero.com.au&#x2F;\" rel=\"nofollow\">http:&#x2F;&#x2F;libero.com.au&#x2F;</a> - Brisbane, Australia or REMOTE (within Australia)<p>We&#x27;re a team of 12 responsible for delivering a world-class Library Management Platform to Public, Corporate and University Libraries around Australia, Germany, Italy, Switzerland and the United Kingdom. Our mission is to provide the best set of tools that empower libraries to build communities, simplify their day to day running and provide exactly what their members need.<p>Front-End Developer: We&#x27;re entirely web-based and have been prototyping our latest stuff with React.js - our customers love what we&#x27;ve come up with so far. We&#x27;re after experienced people passionate about user experience to invent new ways to interact with your library, as well as build upon what we have at the moment.<p>Shoot us an email at seb@libero.com.au to chat if you&#x27;re interested, or even if you were&#x2F;still are that kid that likes hanging out at the library.",
+        "h1b": false,
+        "intern": false,
+        "lat": -27.4710107,
+        "location": "Brisbane, Australia",
+        "lon": 153.0234489,
+        "remote": true,
+        "url": "https://news.ycombinator.com/item?id=10157331",
+        "user": "Novex"
     },
     {
         "address": "San Francisco, CA, USA",
@@ -3766,20 +3766,6 @@
         "user": "manoa"
     },
     {
-        "address": "New York, NY, USA",
-        "country": "US",
-        "freshness": true,
-        "full_html": "BRICKWORK SOFTWARE | NEW YORK CITY &amp; REMOTE |\nPositions: Sr. Ruby on Rails Engineer, Frontend Engineer<p>Brickwork Software <a href=\"http:&#x2F;&#x2F;brickworksoftware.com&#x2F;\" rel=\"nofollow\">http:&#x2F;&#x2F;brickworksoftware.com&#x2F;</a> is a startup changing the way customers engage with brick &amp; mortar stores online. We are looking for exceptional senior software engineers to help us shape the product and the company while growing with us.<p>About you: A \u2018T-shaped\u2019 Ruby on Rails developer with a bias toward back end or front end development, love of great products and clean code. As a key early hire, you will have a big impact on our codebase, engineering process and culture.<p>About us: We are a smart, efficient and fun team that has a great time working together whether in our Chinatown, NY office or on Slack. Brickwork is funded, has a strong customer pipeline and is experiencing tremendous growth. NYC-based and remote candidates welcome.<p>Get in touch at: work AT brickworksoftware.com with some links to where we can find out more about you and the best product you\u2019ve recently discovered.",
-        "h1b": false,
-        "intern": false,
-        "lat": 40.7127837,
-        "location": "New York",
-        "lon": -74.0059413,
-        "remote": true,
-        "url": "https://news.ycombinator.com/item?id=10156408",
-        "user": "BornInTheUSSR"
-    },
-    {
         "address": "Washington, DC, USA",
         "country": "US",
         "freshness": true,
@@ -3792,6 +3778,20 @@
         "remote": false,
         "url": "https://news.ycombinator.com/item?id=10153553",
         "user": "kevinschumacher"
+    },
+    {
+        "address": "New York, NY, USA",
+        "country": "US",
+        "freshness": true,
+        "full_html": "BRICKWORK SOFTWARE | NEW YORK CITY &amp; REMOTE |\nPositions: Sr. Ruby on Rails Engineer, Frontend Engineer<p>Brickwork Software <a href=\"http:&#x2F;&#x2F;brickworksoftware.com&#x2F;\" rel=\"nofollow\">http:&#x2F;&#x2F;brickworksoftware.com&#x2F;</a> is a startup changing the way customers engage with brick &amp; mortar stores online. We are looking for exceptional senior software engineers to help us shape the product and the company while growing with us.<p>About you: A \u2018T-shaped\u2019 Ruby on Rails developer with a bias toward back end or front end development, love of great products and clean code. As a key early hire, you will have a big impact on our codebase, engineering process and culture.<p>About us: We are a smart, efficient and fun team that has a great time working together whether in our Chinatown, NY office or on Slack. Brickwork is funded, has a strong customer pipeline and is experiencing tremendous growth. NYC-based and remote candidates welcome.<p>Get in touch at: work AT brickworksoftware.com with some links to where we can find out more about you and the best product you\u2019ve recently discovered.",
+        "h1b": false,
+        "intern": false,
+        "lat": 40.7127837,
+        "location": "New York",
+        "lon": -74.0059413,
+        "remote": true,
+        "url": "https://news.ycombinator.com/item?id=10156408",
+        "user": "BornInTheUSSR"
     },
     {
         "address": "San Francisco, CA, USA",
@@ -3948,20 +3948,6 @@
         "user": "joshuakarjala"
     },
     {
-        "address": "Cleveland, OH, USA",
-        "country": "US",
-        "freshness": true,
-        "full_html": "MTD Products, Inc. | Embedded Developer | (just south of) Cleveland, OH | ONSITE | Full Time<p>We are a small group of engineers in a large privately owned corporation building autonomous outdoor power equipment. This means small-embedded ARM systems for now, and big-embedded systems someday soon. Corporate benefits and small team dynamics are pretty great. If you like to solve problems and see the solutions come to life on real hardware on the ground every day, we want to talk to you!<p>Full Description and application here: <a href=\"http:&#x2F;&#x2F;chc.tbe.taleo.net&#x2F;chc02&#x2F;ats&#x2F;careers&#x2F;requisition.jsp?org=MTDPRODUCTS&amp;cws=1&amp;rid=1277\" rel=\"nofollow\">http:&#x2F;&#x2F;chc.tbe.taleo.net&#x2F;chc02&#x2F;ats&#x2F;careers&#x2F;requisition.jsp?o...</a>",
-        "h1b": false,
-        "intern": false,
-        "lat": 41.49932,
-        "location": "Cleveland, OH",
-        "lon": -81.6943605,
-        "remote": false,
-        "url": "https://news.ycombinator.com/item?id=10159384",
-        "user": "cchart"
-    },
-    {
         "address": "San Francisco, CA, USA",
         "country": "US",
         "freshness": true,
@@ -3974,6 +3960,20 @@
         "remote": false,
         "url": "https://news.ycombinator.com/item?id=10155816",
         "user": "kevinwuhoo"
+    },
+    {
+        "address": "Cleveland, OH, USA",
+        "country": "US",
+        "freshness": true,
+        "full_html": "MTD Products, Inc. | Embedded Developer | (just south of) Cleveland, OH | ONSITE | Full Time<p>We are a small group of engineers in a large privately owned corporation building autonomous outdoor power equipment. This means small-embedded ARM systems for now, and big-embedded systems someday soon. Corporate benefits and small team dynamics are pretty great. If you like to solve problems and see the solutions come to life on real hardware on the ground every day, we want to talk to you!<p>Full Description and application here: <a href=\"http:&#x2F;&#x2F;chc.tbe.taleo.net&#x2F;chc02&#x2F;ats&#x2F;careers&#x2F;requisition.jsp?org=MTDPRODUCTS&amp;cws=1&amp;rid=1277\" rel=\"nofollow\">http:&#x2F;&#x2F;chc.tbe.taleo.net&#x2F;chc02&#x2F;ats&#x2F;careers&#x2F;requisition.jsp?o...</a>",
+        "h1b": false,
+        "intern": false,
+        "lat": 41.49932,
+        "location": "Cleveland, OH",
+        "lon": -81.6943605,
+        "remote": false,
+        "url": "https://news.ycombinator.com/item?id=10159384",
+        "user": "cchart"
     },
     {
         "address": "Oakland, CA, USA",
@@ -4200,20 +4200,6 @@
         "user": "gpoort"
     },
     {
-        "address": "New York, NY, USA",
-        "country": "US",
-        "freshness": true,
-        "full_html": "FINRA (<a href=\"http:&#x2F;&#x2F;www.finra.org\" rel=\"nofollow\">http:&#x2F;&#x2F;www.finra.org</a>) New York, NY<p>We\u2019re looking for experienced Research Analyst&#x2F;Data Scientist for research positions in Advanced Analytics Unit.<p>The salary range will be $100K - $200K plus excellent benefits.<p>Job description @ <a href=\"https:&#x2F;&#x2F;www.kaggle.com&#x2F;jobs&#x2F;16046&#x2F;finra-quantitative-research-analysts-new-york-city\" rel=\"nofollow\">https:&#x2F;&#x2F;www.kaggle.com&#x2F;jobs&#x2F;16046&#x2F;finra-quantitative-researc...</a><p>Please send your resume to: Richard.liao@finra.org\nOr apply online at <a href=\"http:&#x2F;&#x2F;www.finra.org&#x2F;about&#x2F;careers\" rel=\"nofollow\">http:&#x2F;&#x2F;www.finra.org&#x2F;about&#x2F;careers</a> Job number is 4180",
-        "h1b": false,
-        "intern": false,
-        "lat": 40.7127837,
-        "location": "New York",
-        "lon": -74.0059413,
-        "remote": false,
-        "url": "https://news.ycombinator.com/item?id=10160268",
-        "user": "faat"
-    },
-    {
         "address": "San Francisco, CA, USA",
         "country": "US",
         "freshness": true,
@@ -4226,6 +4212,20 @@
         "remote": true,
         "url": "https://news.ycombinator.com/item?id=10153074",
         "user": "rtfeldman"
+    },
+    {
+        "address": "New York, NY, USA",
+        "country": "US",
+        "freshness": true,
+        "full_html": "FINRA (<a href=\"http:&#x2F;&#x2F;www.finra.org\" rel=\"nofollow\">http:&#x2F;&#x2F;www.finra.org</a>) New York, NY<p>We\u2019re looking for experienced Research Analyst&#x2F;Data Scientist for research positions in Advanced Analytics Unit.<p>The salary range will be $100K - $200K plus excellent benefits.<p>Job description @ <a href=\"https:&#x2F;&#x2F;www.kaggle.com&#x2F;jobs&#x2F;16046&#x2F;finra-quantitative-research-analysts-new-york-city\" rel=\"nofollow\">https:&#x2F;&#x2F;www.kaggle.com&#x2F;jobs&#x2F;16046&#x2F;finra-quantitative-researc...</a><p>Please send your resume to: Richard.liao@finra.org\nOr apply online at <a href=\"http:&#x2F;&#x2F;www.finra.org&#x2F;about&#x2F;careers\" rel=\"nofollow\">http:&#x2F;&#x2F;www.finra.org&#x2F;about&#x2F;careers</a> Job number is 4180",
+        "h1b": false,
+        "intern": false,
+        "lat": 40.7127837,
+        "location": "New York",
+        "lon": -74.0059413,
+        "remote": false,
+        "url": "https://news.ycombinator.com/item?id=10160268",
+        "user": "faat"
     },
     {
         "address": "San Francisco, CA, USA",
@@ -5096,20 +5096,6 @@
         "user": "viksit"
     },
     {
-        "address": "Berlin, Germany",
-        "country": "DE",
-        "freshness": true,
-        "full_html": "Lendico | <a href=\"https:&#x2F;&#x2F;www.lendico.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.lendico.com&#x2F;</a> | Berlin, Germany ONSITE, VISA<p>Senior&#x2F;Mid-Level PHP Developers<p>Lendico is a transparent marketplace for loans. By connecting borrowers and investors we avoid the excessive costs of traditional banking.<p>We are moving to microservices. For both the technical and organizational aspects of microservices we are looking to hire experienced developers with strong opinions on how modern software development should work.<p>Job description and applications:<p><a href=\"https:&#x2F;&#x2F;lendico.workable.com&#x2F;jobs&#x2F;67431\" rel=\"nofollow\">https:&#x2F;&#x2F;lendico.workable.com&#x2F;jobs&#x2F;67431</a><p>Or write me if you have any more questions: seong-min.kang@lendico.de",
-        "h1b": false,
-        "intern": false,
-        "lat": 52.52000659999999,
-        "location": "Berlin",
-        "lon": 13.404954,
-        "remote": false,
-        "url": "https://news.ycombinator.com/item?id=10158349",
-        "user": "lendico_seong"
-    },
-    {
         "address": "New York, NY, USA",
         "country": "US",
         "freshness": true,
@@ -5122,6 +5108,20 @@
         "remote": true,
         "url": "https://news.ycombinator.com/item?id=10153155",
         "user": "cmuir"
+    },
+    {
+        "address": "Berlin, Germany",
+        "country": "DE",
+        "freshness": true,
+        "full_html": "Lendico | <a href=\"https:&#x2F;&#x2F;www.lendico.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.lendico.com&#x2F;</a> | Berlin, Germany ONSITE, VISA<p>Senior&#x2F;Mid-Level PHP Developers<p>Lendico is a transparent marketplace for loans. By connecting borrowers and investors we avoid the excessive costs of traditional banking.<p>We are moving to microservices. For both the technical and organizational aspects of microservices we are looking to hire experienced developers with strong opinions on how modern software development should work.<p>Job description and applications:<p><a href=\"https:&#x2F;&#x2F;lendico.workable.com&#x2F;jobs&#x2F;67431\" rel=\"nofollow\">https:&#x2F;&#x2F;lendico.workable.com&#x2F;jobs&#x2F;67431</a><p>Or write me if you have any more questions: seong-min.kang@lendico.de",
+        "h1b": false,
+        "intern": false,
+        "lat": 52.52000659999999,
+        "location": "Berlin",
+        "lon": 13.404954,
+        "remote": false,
+        "url": "https://news.ycombinator.com/item?id=10158349",
+        "user": "lendico_seong"
     },
     {
         "address": "San Francisco, CA, USA",
@@ -5208,20 +5208,6 @@
         "user": "bdg"
     },
     {
-        "address": "Austin, TX, USA",
-        "country": "US",
-        "freshness": true,
-        "full_html": "Lionheart Software | Austin, TX | Lead Software Engineer | Onsite<p>Lionheart works with early-stage startups with non-technical founders. We&#x27;ve been at this since 2010 and our referral network has gotten to a point where we need to make the jump and bring on some more help. We are currently two engineers and are looking to bring on #3.<p><a href=\"http:&#x2F;&#x2F;lionheartsw.com&#x2F;\" rel=\"nofollow\">http:&#x2F;&#x2F;lionheartsw.com&#x2F;</a> (yes, yes, the cobbler&#x27;s son has no shoes)<p>We&#x27;re fast and nimble, get to choose what projects we work on, what tech we work with, don&#x27;t have to deal with much technical debt, and build awesome products from the ground up. Our role is to help get the companies we work with get to MVP as soon as possible.<p>Once we ship, we help our clients interview or onboard a CTO or lead engineer or stick around for as-needed help. In many cases, though, we&#x27;ve just been retained indefinitely (I like to think it&#x27;s because our clients like us so much!). In some special cases, we take equity. We are currently booked through mid-October.<p>Key Skills (not requirements by any means, but preferable since these will help you hit the ground running)<p>* iOS Development<p>* Python&#x2F;Django<p>This is not a junior role. You should be capable &#x2F; have experience with critiquing everything from napkin sketches to fully-fledged visual designs and then shipping. We have a very design-focused product development process, so ideally you have an eye for design in addition to being a kickass developer.<p>What you get (not going to be coy about numbers. we need help now):<p>* Salary: $80k guaranteed, up to $120k + Bonus DOE<p>* Equity: 1-5% (depends on role, experience, and contribution)<p>Austin-based candidates highly preferred.<p>If any of this sounds intriguing, just send me an email (see profile).<p>Dan",
-        "h1b": false,
-        "intern": false,
-        "lat": 30.267153,
-        "location": "Austin, TX",
-        "lon": -97.7430608,
-        "remote": false,
-        "url": "https://news.ycombinator.com/item?id=10156453",
-        "user": "theli0nheart"
-    },
-    {
         "address": "New York, NY, USA",
         "country": "US",
         "freshness": true,
@@ -5234,6 +5220,20 @@
         "remote": false,
         "url": "https://news.ycombinator.com/item?id=10154406",
         "user": "arach"
+    },
+    {
+        "address": "Austin, TX, USA",
+        "country": "US",
+        "freshness": true,
+        "full_html": "Lionheart Software | Austin, TX | Lead Software Engineer | Onsite<p>Lionheart works with early-stage startups with non-technical founders. We&#x27;ve been at this since 2010 and our referral network has gotten to a point where we need to make the jump and bring on some more help. We are currently two engineers and are looking to bring on #3.<p><a href=\"http:&#x2F;&#x2F;lionheartsw.com&#x2F;\" rel=\"nofollow\">http:&#x2F;&#x2F;lionheartsw.com&#x2F;</a> (yes, yes, the cobbler&#x27;s son has no shoes)<p>We&#x27;re fast and nimble, get to choose what projects we work on, what tech we work with, don&#x27;t have to deal with much technical debt, and build awesome products from the ground up. Our role is to help get the companies we work with get to MVP as soon as possible.<p>Once we ship, we help our clients interview or onboard a CTO or lead engineer or stick around for as-needed help. In many cases, though, we&#x27;ve just been retained indefinitely (I like to think it&#x27;s because our clients like us so much!). In some special cases, we take equity. We are currently booked through mid-October.<p>Key Skills (not requirements by any means, but preferable since these will help you hit the ground running)<p>* iOS Development<p>* Python&#x2F;Django<p>This is not a junior role. You should be capable &#x2F; have experience with critiquing everything from napkin sketches to fully-fledged visual designs and then shipping. We have a very design-focused product development process, so ideally you have an eye for design in addition to being a kickass developer.<p>What you get (not going to be coy about numbers. we need help now):<p>* Salary: $80k guaranteed, up to $120k + Bonus DOE<p>* Equity: 1-5% (depends on role, experience, and contribution)<p>Austin-based candidates highly preferred.<p>If any of this sounds intriguing, just send me an email (see profile).<p>Dan",
+        "h1b": false,
+        "intern": false,
+        "lat": 30.267153,
+        "location": "Austin, TX",
+        "lon": -97.7430608,
+        "remote": false,
+        "url": "https://news.ycombinator.com/item?id=10156453",
+        "user": "theli0nheart"
     },
     {
         "address": "London, UK",
@@ -5488,20 +5488,6 @@
         "user": "montasaurus"
     },
     {
-        "address": null,
-        "country": null,
-        "freshness": true,
-        "full_html": "Improbable | Multiple Software Engineers &amp; Head of Security | Full Time, ONSITE LONDON, UK\n(<a href=\"http:&#x2F;&#x2F;improbable.io&#x2F;life-at-improbable&#x2F;\" rel=\"nofollow\">http:&#x2F;&#x2F;improbable.io&#x2F;life-at-improbable&#x2F;</a>)<p>Improbable is developing an operating environment that makes building simulated worlds possible. Worlds which can be run in real time, simulating the behaviours and interactions of millions of entities. Spaces with their own rules and properties that a multitude of people can simultaneously change, explore and visualise in as many different ways as developers can imagine.<p>We are hiring across multiple teams within the business including:<p>- Building our base real-time distributed simulation platform<p>- Applying our real-time distributed simulation platform to gaming<p>- Building revolutionary new online games backed by our simulation platform<p>- Applying our real-time distributed simulation platform to other verticals<p>Also, Head of Security: We are currently looking to make a critical first security hire around whom we can build a team as we scale. Our codebase is a large-scale, cloud-agnostic, distributed system with a complex combination of Go, JVM technologies and C#.  \nThis team will be responsible responsible for auditing the system\u2019s current security architecture and will also be responsible for security design &#x2F; implementation in future to ensure our data and execution environments are safe. Our current needs surround security auditing, pen-testing, vulnerability testing &#x2F; research, encryption and authentication with great freedom to establish our security infrastructure.<p>Check out: <a href=\"http:&#x2F;&#x2F;www.forbes.com&#x2F;sites&#x2F;parmyolson&#x2F;2015&#x2F;05&#x2F;27&#x2F;improbable..\" rel=\"nofollow\">http:&#x2F;&#x2F;www.forbes.com&#x2F;sites&#x2F;parmyolson&#x2F;2015&#x2F;05&#x2F;27&#x2F;improbable...</a>.<p>In some circumstances we can sponsor visa&#x27;s for exceptional talent. Currently 20+ open positions with more in the pipeline - email me directly if you don&#x27;t see anything that quite matches your skills (Sean@improbable.io)",
-        "h1b": false,
-        "intern": false,
-        "lat": null,
-        "location": "Full Time, ONSITE",
-        "lon": null,
-        "remote": false,
-        "url": "https://news.ycombinator.com/item?id=10158061",
-        "user": "sfanning95"
-    },
-    {
         "address": "Los Angeles, CA, USA",
         "country": "US",
         "freshness": true,
@@ -5514,6 +5500,20 @@
         "remote": false,
         "url": "https://news.ycombinator.com/item?id=10156392",
         "user": "mikeyrenan1"
+    },
+    {
+        "address": null,
+        "country": null,
+        "freshness": true,
+        "full_html": "Improbable | Multiple Software Engineers &amp; Head of Security | Full Time, ONSITE LONDON, UK\n(<a href=\"http:&#x2F;&#x2F;improbable.io&#x2F;life-at-improbable&#x2F;\" rel=\"nofollow\">http:&#x2F;&#x2F;improbable.io&#x2F;life-at-improbable&#x2F;</a>)<p>Improbable is developing an operating environment that makes building simulated worlds possible. Worlds which can be run in real time, simulating the behaviours and interactions of millions of entities. Spaces with their own rules and properties that a multitude of people can simultaneously change, explore and visualise in as many different ways as developers can imagine.<p>We are hiring across multiple teams within the business including:<p>- Building our base real-time distributed simulation platform<p>- Applying our real-time distributed simulation platform to gaming<p>- Building revolutionary new online games backed by our simulation platform<p>- Applying our real-time distributed simulation platform to other verticals<p>Also, Head of Security: We are currently looking to make a critical first security hire around whom we can build a team as we scale. Our codebase is a large-scale, cloud-agnostic, distributed system with a complex combination of Go, JVM technologies and C#.  \nThis team will be responsible responsible for auditing the system\u2019s current security architecture and will also be responsible for security design &#x2F; implementation in future to ensure our data and execution environments are safe. Our current needs surround security auditing, pen-testing, vulnerability testing &#x2F; research, encryption and authentication with great freedom to establish our security infrastructure.<p>Check out: <a href=\"http:&#x2F;&#x2F;www.forbes.com&#x2F;sites&#x2F;parmyolson&#x2F;2015&#x2F;05&#x2F;27&#x2F;improbable..\" rel=\"nofollow\">http:&#x2F;&#x2F;www.forbes.com&#x2F;sites&#x2F;parmyolson&#x2F;2015&#x2F;05&#x2F;27&#x2F;improbable...</a>.<p>In some circumstances we can sponsor visa&#x27;s for exceptional talent. Currently 20+ open positions with more in the pipeline - email me directly if you don&#x27;t see anything that quite matches your skills (Sean@improbable.io)",
+        "h1b": false,
+        "intern": false,
+        "lat": null,
+        "location": "Full Time, ONSITE",
+        "lon": null,
+        "remote": false,
+        "url": "https://news.ycombinator.com/item?id=10158061",
+        "user": "sfanning95"
     },
     {
         "address": "San Francisco, CA, USA",
