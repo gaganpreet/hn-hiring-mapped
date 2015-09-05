@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-import lxml.html
 import re
 import requests
 import json
-import time
 import sys
 import os
+import concurrent.futures
 from pygeocoder import Geocoder
 from pygeolib import GeocoderError
 from functools import lru_cache
 from datetime import datetime, timedelta
 
 BASE_URL = 'https://news.ycombinator.com'
+ITEM_API_URL = 'https://hacker-news.firebaseio.com/v0/item/{0}.json'
 
 def guess_type_of_position(text):
     '''
@@ -102,33 +102,15 @@ def shorten_comment(comment_html):
     line = re.sub('<.*?>', '', line)
     return line
 
-def get_comment_objects(html):
-    '''
-    Parse the page with lxml and get the top level comments
-    '''
-    tree = lxml.html.fromstring(html)
-
-    # This is a complicated xpath because HN's html is terrible
-    # Another reason is that we need only the top level comments,
-    # and ignore the children
-    rows = tree.xpath("//img[@width=0]/../..")
-
-    for row in rows:
-        if row.xpath(".//span[@class='comment']"):
-            try:
-                comment = row.xpath(".//span/font")[0]
-                user = row.xpath('.//span/a[1]')[0].text_content()
-                url_path = '/' + row.xpath('.//span/a[2]')[0].attrib['href']
-                yield url_path, user, comment
-            except:
+def get_comment_objects(items):
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        for response in executor.map(fetch_item, items):
+            if not response:
                 continue
+            if 'deleted' in response and response['deleted'] is True:
+                continue
+            yield response['id'], response['by'], response['text']
 
-    more = tree.xpath(".//a[text()='More']")
-    if len(more) == 1:
-        time.sleep(30)
-        page = fetch_page(BASE_URL + more[0].attrib['href'])
-        for comment in get_comment_objects(page):
-            yield comment
 
 def fetch_page(url):
     '''
@@ -148,7 +130,6 @@ def geocode(location):
     '''
     location = location.encode('utf-8')
 
-    time.sleep(0.25)
     try:
         results = Geocoder.geocode(location)
     except GeocoderError as e:
@@ -170,18 +151,6 @@ def is_url(text):
     '''
     return re.match('^https?://[^ ]*$', text)
 
-def extract_text(node):
-    '''
-    Why not .text_content() - This one inserts '\n' for convenience
-    '''
-    text = ''
-    for child in node.itertext():
-        if is_url(child):
-            text = text[:-1] + child
-        else:
-            text += child + '\n'
-    return text
-
 def is_not_duplicate(key, store):
     if store:
         return not key in store
@@ -196,7 +165,7 @@ def location_and_geocode(comment, first_line):
     # Try guessing location on first line, then on the whole thing
     location = guess_location(first_line)
     if location == None:
-        location = guess_location(extract_text(comment), False)
+        location = guess_location(comment, False)
 
     if location:
         (lat, lon), formatted_address, country = geocode(location)
@@ -207,27 +176,27 @@ def location_and_geocode(comment, first_line):
     return (location, lat, lon, formatted_address, country)
 
 
-def parse_and_write(start_html, currrent_file, previous_month_users):
+def parse_and_write(post_id, currrent_file, previous_month_users):
     '''
     Parse the html, organize into objects and write to `current_file'
     as json
     '''
     results = []
-    for url_path, user, comment in get_comment_objects(start_html):
+    items = fetch_item(post_id)
+    for url_path, user, comment_html in get_comment_objects(items['kids']):
         if not url_path:
             continue
-        comment_html = lxml.html.tostring(comment, encoding='utf-8')
-        comment_html = comment_html.decode('utf-8')
+        comment = comment_html
 
         first_line = shorten_comment(comment_html)
-        remote, h1b, intern_ = guess_type_of_position(extract_text(comment))
+        remote, h1b, intern_ = guess_type_of_position(comment)
 
         location, lat, lon, formatted_address, country = location_and_geocode(comment, first_line)
 
         result = dict(remote=remote,
                       intern=intern_,
                       h1b=h1b,
-                      url=(BASE_URL + url_path),
+                      url=(BASE_URL + '/item?id=' + str(url_path)),
                       full_html=comment_html,
                       user=user,
                       freshness=is_not_duplicate(user, previous_month_users),
@@ -240,8 +209,14 @@ def parse_and_write(start_html, currrent_file, previous_month_users):
     json.dump(results, open(currrent_file, 'w'), indent=4, sort_keys=True)
 
 
+def fetch_item(item_id):
+    url = ITEM_API_URL.format(item_id)
+    response = requests.get(url)
+    return response.json()
+
+
 def main():
-    url = BASE_URL + '/item?id=' + sys.argv[1]
+    item_id = sys.argv[1]
 
     date = datetime.strptime(sys.argv[2], '%Y-%m')
     previous_month = date - timedelta(days=1)
@@ -255,7 +230,7 @@ def main():
     except IOError:
         previous_month_users = False
 
-    parse_and_write(fetch_page(url), current_file, previous_month_users)
+    parse_and_write(item_id, current_file, previous_month_users)
 
     # Dump to a file the months for which data is available, ignoring hidden files
     available_data = [filename.split('.')[0]
